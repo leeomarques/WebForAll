@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        /*Todos os elementos*/
+        
+        * {
+            color: #ff0;
+            background-color: #f77;
+        }
+        /* seletor de classe*/
+        
+        .tag {
+            color: #ff0;
+            background-color: #f77;
+        }
+        /* seletor de id*/
+        
+        #aprovados {
+            color: #ff0;
+            background-color: #f77;
+        }
+        /* seletor de div diretamente aninhado(filho direto)*/
+        
+        #aninhado>div {
+            color: #ff0;
+            background-color: #f77;
+        }
+        /* seletor descendente direto imediatamente dentro de um seletor*/
+        
+        #aninhado section {
+            color: #ff0;
+            background-color: #f77;
+        }
+        /* seletor de irmao adjacente (simbling) 'Vizinhos' */
+        
+        p+ul {
+            color: #ff0;
+            background-color: #f77;
+        }
+        /* seletor de irmao de forma mais geral (estao dentro de um pai) */
+        
+        p~ol {
+            color: #ff0;
+            background-color: #f77;
+        }
+        /* seletor que é uma propriedade ( ha possibilidade de associar um produto com o seu valor [feira]=casa) ou [feira]~=casa ou (contem) [feira]*sa*/
+        
+        [feira] {
+            color: #ff0;
+            background-color: #f77;
+        }
+        /* Seletor Filho numero 1 de outra tag colocando o nolabel*/
+        
+        span:nth-child(1) {
+            color: #ff0;
+            background-color: #f77;
+        }
+        /* seletores filhos impares odd / pares even (indicado para fazer aquelas tabelas zebradas)*/
+        
+        span:nth-child(odd) {
+            color: #ff0;
+            background-color: #f77;
+        }
+        /*  elementos impares na section e ul's */
+        
+        section> :nth-child(odd),
+        ul,
+        p {
+            color: #ff0;
+            background-color: #f77;
+        }
+        /*  sections filhos direto, elemento tipo span */
+        
+        section>span:nth-of-type(2) {
+            color: #ff0;
+            background-color: #f77;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='tag'>
+        <div class='tag'>
+            <p class='tag'>1</p>
+            <ul class='tag' feira='casa'>
+                <li>Arroz</li>
+                <li>Feijão</li>
+            </ul>
+            <ul class='tag' feira='escritorio empresa'>
+                <li>Café</li>
+                <li>Água</li>
+            </ul>
+            <ol id='aprovados' class='tag'>
+                <li>Maria</li>
+                <li>Pedro</li>
+                <li>Ana</li>
+            </ol>
+            <div id='aninhado' class='tag'>
+                <div class="tag">
+                    <section class='tag'>
+                        <span class='tag'>1</span>
+                        <p class='tag'>2</p>
+                        <span class='tag'>3</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>
